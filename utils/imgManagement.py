@@ -34,7 +34,9 @@ def orderInDirectories():
 		else:
 			newDirName = dateString
 
-		print "New Dir name is: " + newDirName
+		newPath = os.path.join(basepath,newDirname,filename)
+		print "New path is: " + newPath
+		os.rename(path,newPath)
 		
 
 if __name__ == "__main__":
