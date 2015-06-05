@@ -6,7 +6,7 @@ def orderInDirectories():
 		path = os.path.join(basepath, filename)
 		if os.path.isdir(path):
 			continue
-		newDirName = filenam[0:8]
+		newDirName = filename[0:8]
 		print newDirName
 
 if __name__ == "__main__":
