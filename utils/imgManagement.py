@@ -6,8 +6,11 @@ def orderInDirectories():
 		path = os.path.join(basepath, filename)
 		if os.path.isdir(path):
 			continue
-		newDirName = filename[0:8]
-		print newDirName
+		dateString = filename[0:8]
+		timeString = filename[9:13]
+
+		print timeString
+		
 
 if __name__ == "__main__":
 	orderInDirectories()
