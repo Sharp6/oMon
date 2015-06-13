@@ -2,3 +2,8 @@ img {
    width: 300px;
    margin: 20px;
 }
+
+img.latestImg {
+	width: 100%;
+	max-width: 1000px;
+}
