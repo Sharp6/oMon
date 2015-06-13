@@ -38,6 +38,16 @@ def orderInDirectories():
 		print "New path is: " + newPath
 		os.renames(path,newPath)
 		
+def zip():
+   basepath = '../app/static/img'
+   zipPath = "../tmp/"
+   zipLocation = os.path.join(zipPath, "img.zip")
+   zipf = zipfile.ZipFile(zipLocation, 'w')
+   files = os.listdir(basepath)
+   for file in files:
+      zipf.write(os.path.join(basepath, file))
+   zipf.close()
+   return "zip ok.";
 
 if __name__ == "__main__":
-	orderInDirectories()
+	zip()
