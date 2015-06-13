@@ -1,15 +1,11 @@
-<html>
- <head>
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
- </head>
+{% extends "base.html" %}
 
- <body>
-  <h1>Olivia Monitor</h1>
+{% block content %}
+
   {% for img in images %}
    <p>{{img}}<br/>
     <img src="{{ url_for('static', filename = 'img/'+img) }}" />
    <p>
   {% endfor %}
- </body>
-</html>
+
+{% endblock %} 

@@ -1,17 +1,11 @@
-<html>
- <head>
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
- </head>
+{% extends "base.html" %}
 
- <body>
-  <h1>Olivia Monitor</h1>
+{% block content %}
   <p>Welcome to the Olivia monitor. To get started: marvel at the latest picture taken of our little miracle.
   </p>
   
   <p>{{img}}<br/>
      <img src="{{ url_for('static', filename="img/"+img) }}" class="latestImg" />
   </p>
-  
- </body>
-</html>
+ 
+ {% endblock %} 
