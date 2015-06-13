@@ -44,9 +44,14 @@ def zip():
    zipPath = "../tmp/"
    zipLocation = os.path.join(zipPath, "img.zip")
    zipf = zipfile.ZipFile(zipLocation, 'w')
-   files = os.listdir(basepath)
-   for file in files:
-      zipf.write(os.path.join(basepath, file))
+
+   for root,dirs,files in os.walk(basepath):
+      for dir in dirs:
+         for file in listdir(os.path.join(root,dir)):
+            zipf.write(os.path.join(root,file))
+      for file in files:
+         zipf.write(os.path.join(root,file))
+   
    zipf.close()
    return "zip ok.";
 
