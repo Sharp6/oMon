@@ -48,7 +48,7 @@ def zip():
    for root,dirs,files in os.walk(basepath):
       for dir in dirs:
          for file in os.listdir(os.path.join(root,dir)):
-            zipf.write(os.path.join(root,file))
+            zipf.write(os.path.join(root,dir,file))
       for file in files:
          zipf.write(os.path.join(root,file))
    
