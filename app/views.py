@@ -1,5 +1,6 @@
 import os,sys
 import zipfile
+import glob
 
 from flask import render_template
 from app import app
@@ -11,5 +12,5 @@ def allImg():
 
 @app.route('/')
 def recent():
-   newest = (glob.iglob('./app/static/img/*.jpg'), key=os.path.getctime)
+   newest = max(glob.iglob('./app/static/img/*.jpg'), key=os.path.getctime)
    return render_template('index.html', img=newest)
