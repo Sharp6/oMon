@@ -27,16 +27,16 @@ def orderInDirectories():
 					newDirName = dateString[0:4] + str(int(month)-1) + str(28)
 				#januari
 				if (month == 1):
-					newDirName = str(int(dateString[0:4]-1)) + str(12) + str(31)
+					newDirName = str(int(dateString[0:4])-1) + str(12) + str(31)
 			else:
 				# Normal day
-				newDirName = dateString[0:6] + int(dateString[6:8] - 1)
+				newDirName = dateString[0:6] + str(int(dateString[6:8]) - 1)
 		else:
 			newDirName = dateString
 
-		newPath = os.path.join(basepath,newDirname,filename)
+		newPath = os.path.join(basepath,newDirName,filename)
 		print "New path is: " + newPath
-		os.rename(path,newPath)
+		os.renames(path,newPath)
 		
 
 if __name__ == "__main__":
