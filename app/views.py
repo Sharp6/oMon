@@ -12,4 +12,5 @@ def allImg():
 @app.route('/')
 def recent():
    newest = (glob.iglob('./app/static/img/*.jpg'), key=os.path.getctime)
-   return render_template('index.html', img=newest)
+   filename = os.path.split(newest)
+   return render_template('index.html', img=filename)
