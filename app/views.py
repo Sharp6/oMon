@@ -10,4 +10,6 @@ def allImg():
    return render_template('all.html', title='O-Mon', images=imgs)
 
 @app.route('/')
-def 
+def recent():
+   newest = (glob.iglob('./app/static/img/*.jpg'), key=os.path.getctime)
+   return render_template('index.html', img=newest)

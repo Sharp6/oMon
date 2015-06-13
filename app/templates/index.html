@@ -6,10 +6,12 @@
 
  <body>
   <h1>Olivia Monitor</h1>
-  {% for img in images %}
-   <p>{{img}}<br/>
-    <img src="{{ url_for('static', filename = 'img/'+img) }}" />
-   <p>
-  {% endfor %}
+  <p>Welcome to the Olivia monitor. To get started: marvel at the latest picture taken of our little miracle.
+  </p>
+  
+  <p>{{img}}<br/>
+     <img src="{{ url_for('static', filename = 'img/'+img) }}" />
+  </p>
+  
  </body>
 </html>
