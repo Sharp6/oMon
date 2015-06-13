@@ -1,4 +1,5 @@
 import os,sys
+import zipfile
 
 def orderInDirectories():
 	basepath = '../app/static/img'
