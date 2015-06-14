@@ -31,10 +31,10 @@ $(document).ready(function() {
 	    	return self.sliderPosition() * 780 / 100;
 	    });
 	    self.clockHours = ko.computed(function() {
-	    	return (self.clockPosition - (self.clockPosition % 60)) / 60;
+	    	return (self.clockPosition() - (self.clockPosition() % 60)) / 60;
 	    });
 	    self.clockMinutes = ko.computed(function() {
-	    	return self.clockPosition % 60;
+	    	return self.clockPosition() % 60;
 	    });
 	}
 
