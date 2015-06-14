@@ -22,6 +22,10 @@ $(document).ready(function() {
 	  }
 	};
 
+	function r(el, deg) {
+    el.setAttribute('transform', 'rotate('+ deg +' 50 50)')
+  }
+
 	var ViewModel = function() {
 		  //range of hours is 6PM - 7AM = 13hours = 13*60 = 780 minutes
 
@@ -34,16 +38,10 @@ $(document).ready(function() {
 	    	return (Math.floor(self.clockPosition() / 60)) % 24;
 	    });
 	    self.clockMinutes = ko.computed(function() {
+	    	r(min, 6*Math.round(self.clockPosition() % 60));
 	    	return Math.round(self.clockPosition() % 60);
 	    });
 	}
 
 	ko.applyBindings(new ViewModel());
 });
-
-
-
-function map( x,  in_min,  in_max,  out_min,  out_max){
-  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
-
