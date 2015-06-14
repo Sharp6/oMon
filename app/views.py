@@ -15,3 +15,7 @@ def recent():
    newest = max(glob.iglob('./app/static/img/*.jpg'), key=os.path.getctime)
    filename = os.path.split(newest)
    return render_template('index.html', img=filename[1])
+
+@app.route('/clock')
+def renderClock():
+   return render_template('clock.html')
