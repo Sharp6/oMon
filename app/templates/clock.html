@@ -21,6 +21,16 @@ This is the clock.
 Slider value is: <span data-bind="text: sliderPosition"></span><br>
 Clock value is: <span data-bind="text: clockPosition"></span><br>
 Hour value is: <span data-bind="text: clockHours"></span><br>
-Minutes value is: <span data-bind="text: clockMinutes"></span>
+Minutes value is: <span data-bind="text: clockMinutes"></span><br/>
+
+<div id="clock-container">
+	<svg id="clock" viewBox="0 0 100 100">
+	  <circle id="face" cx="50" cy="50" r="45"/>
+	  <g id="hands">
+	    <rect id="hour" x="47.5" y="12.5" width="5" height="30" rx="2.5" ry="2.55" />
+	    <rect id="min" x="48.5" y="12.5" width="3" height="40" rx="2" ry="2"/>
+	  </g>
+	</svg>
+</div>
 
 {% endblock %} 
