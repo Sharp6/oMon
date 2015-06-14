@@ -2,9 +2,17 @@
 
 {% block js %}
 <script src="{{ url_for('static', filename='libraries/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='libraries/jquery-ui.min.js') }}"></script>
+<script src="{{ url_for('static', filename='libraries/knockout.js') }}"></script>
 <script src="{{ url_for('static', filename='js/clock.js') }}"></script>
 {% endblock %}
 
 {% block content %}
 This is the clock.
+
+<input data-bind="value: clockPosition, valueUpdate: 'afterkeydown'" />
+<div style="margin: 10px" data-bind="slider: clockPosition, sliderOptions: {min: 0, max: 100, range: 'min', step: 1}"></div>
+
+<span data-bind="text: clockPosition"></span>
+
 {% endblock %} 
