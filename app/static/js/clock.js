@@ -23,10 +23,27 @@ $(document).ready(function() {
 	};
 
 	var ViewModel = function() {
+		  //range of hours is 6PM - 7AM = 13hours = 13*60 = 780 minutes
+
 	    var self = this;
-	    self.clockPosition = ko.observable(1);
+	    self.sliderPosition = ko.observable(1);
+	    self.clockPosition = ko.computed(function() {
+	    	return self.sliderPosition * 780 / 100;
+	    });
+	    self.clockHours = ko.computed(function() {
+	    	retun (self.clockPosition - (self.clockPosition % 60)) / 60;
+	    });
+	    self.clockMinutes = ko.computed(function() {
+	    	return self.clockPosition % 60;
+	    });
 	}
 
 	ko.applyBindings(new ViewModel());
 });
+
+
+
+function map( x,  in_min,  in_max,  out_min,  out_max){
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
 

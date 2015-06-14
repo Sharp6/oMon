@@ -14,10 +14,13 @@
 {% block content %}
 This is the clock.
 
-<input data-bind="value: clockPosition, valueUpdate: 'afterkeydown'" />
-<div style="margin: 10px" data-bind="slider: clockPosition, sliderOptions: {min: 0, max: 100, range: 'min', step: 1}"></div>
+<input data-bind="value: sliderPosition, valueUpdate: 'afterkeydown'" />
+<div style="margin: 10px" data-bind="slider: sliderPosition, sliderOptions: {min: 0, max: 100, range: 'min', step: 1}"></div>
 
 
+Slider value is: <span data-bind="text: sliderPosition"></span>
 Clock value is: <span data-bind="text: clockPosition"></span>
+Hour value is: <span data-bind="text: clockHours"></span>
+Minutes value is: <span data-bind="text: clockMinutes"></span>
 
 {% endblock %} 
