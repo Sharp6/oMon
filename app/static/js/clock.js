@@ -31,9 +31,13 @@ $(document).ready(function() {
 
 	    var self = this;
 	    self.sliderPosition = ko.observable(1);
+	    self.closestImg = ko.observable("");
 	    self.clockPosition = ko.computed(function() {
-	    	return Math.round((self.sliderPosition() * 780 / 100)+(18*60));
-	    });
+	    	var thisClockPosition = Math.round((self.sliderPosition() * 780 / 100)+(18*60));
+	    	$.getJSON('/api/getImgBasedOnTime', { 'clockPosition': thisClockPosition }, closestImg)
+	    	return thisClockPosition;
+	    }).extend({rateLimit: 50});
+
 	    self.clockHours = ko.computed(function() {
 	    	var thisHour = (Math.floor(self.clockPosition() / 60)) % 24;
 	    	r(hour, 30*thisHour);

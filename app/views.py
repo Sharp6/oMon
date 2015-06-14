@@ -19,3 +19,8 @@ def recent():
 @app.route('/clock')
 def renderClock():
    return render_template('clock.html')
+
+
+@app.route('/api/getImgBasedOnTime')
+def getImgBasedOnTime():
+   return 'all is well'
