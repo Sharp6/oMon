@@ -28,7 +28,7 @@ $(document).ready(function() {
 	    var self = this;
 	    self.sliderPosition = ko.observable(1);
 	    self.clockPosition = ko.computed(function() {
-	    	return Math.round((self.sliderPosition() * 780 / 100)+18);
+	    	return Math.round((self.sliderPosition() * 780 / 100)+(18*60);
 	    });
 	    self.clockHours = ko.computed(function() {
 	    	return Math.floor(self.clockPosition() / 60);
