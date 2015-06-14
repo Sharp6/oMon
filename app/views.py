@@ -23,5 +23,5 @@ def renderClock():
 
 
 @app.route('/api/getImgBasedOnTime/<time>')
-def getImgBasedOnTime(time:None):
+def getImgBasedOnTime(time=None):
    return jsonify(data='all is well at '+time)
