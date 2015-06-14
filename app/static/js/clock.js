@@ -28,13 +28,13 @@ $(document).ready(function() {
 	    var self = this;
 	    self.sliderPosition = ko.observable(1);
 	    self.clockPosition = ko.computed(function() {
-	    	return self.sliderPosition() * 780 / 100;
+	    	return Math.round(self.sliderPosition() * 780 / 100);
 	    });
 	    self.clockHours = ko.computed(function() {
-	    	return (self.clockPosition() - (self.clockPosition() % 60)) / 60;
+	    	return Math.floor(self.clockPosition() / 60);
 	    });
 	    self.clockMinutes = ko.computed(function() {
-	    	return self.clockPosition() % 60;
+	    	return Math.round(self.clockPosition() % 60);
 	    });
 	}
 
