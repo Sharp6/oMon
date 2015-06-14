@@ -1,3 +1,4 @@
+$(document).ready(function() {
 ko.bindingHandlers.slider = {
   init: function (element, valueAccessor, allBindingsAccessor) {
     var options = allBindingsAccessor().sliderOptions || {};
@@ -27,3 +28,5 @@ var ViewModel = function() {
 }
 
 ko.applyBindings(new ViewModel());
+});
+
