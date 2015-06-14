@@ -1,6 +1,8 @@
 <html>
  <head>
   <title>{{title}}</title>
+  {% block css %}
+  {% endblock %}
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   {% block js %}
   {% endblock %}

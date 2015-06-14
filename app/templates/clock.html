@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/jquery-ui.css') }}">
+{% endblock %}
+
 {% block js %}
 <script src="{{ url_for('static', filename='libraries/jquery.min.js') }}"></script>
 <script src="{{ url_for('static', filename='libraries/jquery-ui.min.js') }}"></script>
