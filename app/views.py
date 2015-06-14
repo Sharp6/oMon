@@ -22,6 +22,6 @@ def renderClock():
    return render_template('clock.html')
 
 
-@app.route('/api/getImgBasedOnTime')
+@app.route('/api/getImgBasedOnTime/<time>')
 def getImgBasedOnTime():
-   return jsonify(data='all is well')
+   return jsonify(data='all is well at '+time)
