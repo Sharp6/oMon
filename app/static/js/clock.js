@@ -31,7 +31,7 @@ $(document).ready(function() {
 	    	return Math.round((self.sliderPosition() * 780 / 100)+(18*60));
 	    });
 	    self.clockHours = ko.computed(function() {
-	    	return Math.floor(self.clockPosition() / 60);
+	    	return (Math.floor(self.clockPosition() / 60)) % 24;
 	    });
 	    self.clockMinutes = ko.computed(function() {
 	    	return Math.round(self.clockPosition() % 60);
