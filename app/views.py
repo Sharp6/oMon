@@ -3,6 +3,7 @@ import zipfile
 import glob
 
 from flask import render_template
+from flask import jsonify
 from app import app
 
 @app.route('/all')
@@ -23,4 +24,4 @@ def renderClock():
 
 @app.route('/api/getImgBasedOnTime')
 def getImgBasedOnTime():
-   return 'all is well'
+   return jsonify(data='all is well')
