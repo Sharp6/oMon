@@ -13,6 +13,6 @@ This is the clock.
 <input data-bind="value: clockPosition, valueUpdate: 'afterkeydown'" />
 <div style="margin: 10px" data-bind="slider: clockPosition, sliderOptions: {min: 0, max: 100, range: 'min', step: 1}"></div>
 
-<span data-bind="text: clockPosition"></span>
+Clock value is: <span data-bind="text: clockPosition"></span>
 
 {% endblock %} 

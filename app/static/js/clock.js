@@ -23,8 +23,7 @@ ko.bindingHandlers.slider = {
 
 var ViewModel = function() {
     var self = this;
-
-    self.clockPosition = ko.observable(0);
+    self.clockPosition = ko.observable(1);
 }
 
 ko.applyBindings(new ViewModel());
