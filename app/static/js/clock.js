@@ -35,7 +35,7 @@ $(document).ready(function() {
 	    self.clockPosition = ko.computed(function() {
 	    	var thisClockPosition = Math.round((self.sliderPosition() * 780 / 100)+(18*60));
 	    	$.getJSON('/api/getImgBasedOnTime', { 'clockPosition': thisClockPosition }, function(data) {
-	    		console.log(data.data);
+	    		self.closestImg(data.data);
 	    	});
 	    	return thisClockPosition;
 	    }).extend({rateLimit: 50});
