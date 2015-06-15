@@ -19,7 +19,8 @@ def recent():
 
 @app.route('/clock')
 def renderClock():
-   print os.walk('./app/static/img')[1]
+   for root,dirs,files in os.walk('./app/static/img')
+      print dirs
    return render_template('clock.html')
 
 
