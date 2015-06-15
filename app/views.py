@@ -27,7 +27,9 @@ def renderClock():
 @app.route('/api/getImgBasedOnTime/<date>/<time>')
 def getImgBasedOnTime(date=None,time=None):
    if((int(time)/60)>23):
-      print "Tomorrow!"
+      newDay = int(date[6:8]) + 1
+      newDate = date[0:6] + str(newDay)
+      print "Tomorrow! " + newDate
    hours = math.floor(int(time) / 60) % 24
    minutes = round(int(time)%60)
    print "hours: " + str(hours) + " minutes: " + str(minutes)
