@@ -30,8 +30,8 @@ def getImgBasedOnTime(date=None,time=None):
       newDay = int(date[6:8]) + 1
       newDate = date[0:6] + str(newDay)
       print "Tomorrow! " + newDate
-   hours = math.floor(int(time) / 60) % 24
-   minutes = round(int(time)%60)
+   hours = int(math.floor(int(time) / 60) % 24)
+   minutes = int(round(int(time)%60))
 
    timeString = int(str(hours) + str(minutes))
 
