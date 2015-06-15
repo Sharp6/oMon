@@ -56,4 +56,4 @@ def getImgBasedOnTime(date=None,time=None):
 
    print "hours: " + str(hours) + " minutes: " + str(minutes)
    print "Minfile = " + minFile
-   return jsonify(data='all is well at '+date + " at " +time)
+   return jsonify(imgSrc=minFile)

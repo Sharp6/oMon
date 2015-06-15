@@ -37,7 +37,7 @@ $(document).ready(function() {
 	    	if(self.sliderPosition() && self.selectedDate()) {
 	    	  var thisClockPosition = Math.round((self.sliderPosition() * 780 / 100)+(18*60));
 		    	$.getJSON('/api/getImgBasedOnTime/' + self.selectedDate() + "/" + thisClockPosition, {}, function(data) {
-		    		self.closestImg(data.data);
+		    		self.closestImg(data.imgSrc);
 		    	});
 		    	return thisClockPosition;	
 	    	} else {
