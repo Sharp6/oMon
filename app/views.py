@@ -23,6 +23,6 @@ def renderClock():
    return render_template('clock.html', dirList=dirList)
 
 
-@app.route('/api/getImgBasedOnTime/<time>')
-def getImgBasedOnTime(time=None):
-   return jsonify(data='all is well at '+time)
+@app.route('/api/getImgBasedOnTime/<date>/<time>')
+def getImgBasedOnTime(date=None,time=None):
+   return jsonify(data='all is well at '+date + " at " +time)
