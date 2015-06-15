@@ -56,4 +56,4 @@ def zip():
    return "zip ok.";
 
 if __name__ == "__main__":
-	zip()
+	orderInDirectories()
