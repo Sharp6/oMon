@@ -32,5 +32,21 @@ def getImgBasedOnTime(date=None,time=None):
       print "Tomorrow! " + newDate
    hours = math.floor(int(time) / 60) % 24
    minutes = round(int(time)%60)
+
+   timeString = int(str(hours) + str(minutes))
+
+   files = os.list(os.path.join('./app/static/img',date))
+
+   
+   firstFile = next(files)
+   minimal = abs(timeString - int(firstFile[9-13]))
+   minFile = firstFile
+
+   for file in files:
+      if(abs(timeString - int(file[9-13])) < minimal):
+         minimal = abs(timeString - int(file[9-13]))
+         minFile = file
+
    print "hours: " + str(hours) + " minutes: " + str(minutes)
+   print "Minfile = " + minFile
    return jsonify(data='all is well at '+date + " at " +time)
