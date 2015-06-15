@@ -43,7 +43,7 @@ def getImgBasedOnTime(date=None,time=None):
    minFile = files[0]
 
    for file in files:
-      print file[9-13]
+      print "file: " + file
       if(abs(timeString - int(file[9-13])) < minimal):
          minimal = abs(timeString - int(file[9-13]))
          minFile = file
