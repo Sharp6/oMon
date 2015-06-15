@@ -33,17 +33,23 @@ def getImgBasedOnTime(date=None,time=None):
    hours = int(math.floor(int(time) / 60) % 24)
    minutes = int(round(int(time)%60))
 
-   timeString = int(str(hours) + str(minutes))
+   if(hours < 10):
+      hoursString = str(0) + str(hours)
+   else:
+      hoursString = str(hours)
+
+   if(minutes < 10):
+      minutesString = str(0) + str(minutes)
+   else:
+      minutesString = str(minutes)
+   timeString = int(hoursString + minutesString)
 
    files = os.listdir(os.path.join('./app/static/img',date))
 
-   
-   
    minimal = 1000
    minFile = files[0]
 
    for file in files:
-      print "file: " + file[9:13]
       if(abs(timeString - int(file[9:13])) < minimal):
          minimal = abs(timeString - int(file[9:13]))
          minFile = file
