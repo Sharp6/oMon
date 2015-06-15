@@ -19,8 +19,8 @@ def recent():
 
 @app.route('/clock')
 def renderClock():
-   print next(os.walk('./app/static/img'))[1]
-   return render_template('clock.html')
+   dirList = next(os.walk('./app/static/img'))[1]
+   return render_template('clock.html', dirList=dirList)
 
 
 @app.route('/api/getImgBasedOnTime/<time>')

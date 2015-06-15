@@ -19,6 +19,11 @@ This is the clock.
 <div style="margin: 10px" data-bind="slider: sliderPosition, sliderOptions: {min: 0, max: 100, range: 'min', step: 1}"></div>
 
 
+List of dirs is:
+{% for dir in dirList %}
+dir
+{% endfor %}
+
 Slider value is: <span data-bind="text: sliderPosition"></span><br>
 Clock value is: <span data-bind="text: clockPosition"></span><br>
 Hour value is: <span data-bind="text: clockHours"></span><br>
