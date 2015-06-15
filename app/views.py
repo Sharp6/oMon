@@ -53,6 +53,8 @@ def getImgBasedOnTime(date=None,time=None):
       if(abs(timeString - int(file[9:13])) < minimal):
          minimal = abs(timeString - int(file[9:13]))
          minFile = file
+         print "score " + str(minimal) + " for file " + minFile
+
 
    print "hours: " + str(hours) + " minutes: " + str(minutes)
    print "Minfile = " + minFile
