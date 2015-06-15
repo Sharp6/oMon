@@ -30,5 +30,5 @@ def getImgBasedOnTime(date=None,time=None):
       print "Tomorrow!"
    hours = math.floor(int(time) / 60) % 24
    minutes = round(int(time)%60)
-   print "hours: " + hours + " minutes: " + minutes
+   print "hours: " + str(hours) + " minutes: " + str(minutes)
    return jsonify(data='all is well at '+date + " at " +time)
