@@ -38,9 +38,9 @@ def getImgBasedOnTime(date=None,time=None):
    files = os.listdir(os.path.join('./app/static/img',date))
 
    
-   firstFile = next(files)
-   minimal = abs(timeString - int(firstFile[9-13]))
-   minFile = firstFile
+   
+   minimal = 1000
+   minFile = files[0]
 
    for file in files:
       if(abs(timeString - int(file[9-13])) < minimal):
