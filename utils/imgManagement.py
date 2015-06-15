@@ -6,6 +6,7 @@ def orderInDirectories():
 	for filename in os.listdir(basepath):
 		path = os.path.join(basepath, filename)
 		if os.path.isdir(path):
+			print "Found a dir!"
 			continue
 		dateString = filename[0:8]
 		timeString = filename[9:13]
