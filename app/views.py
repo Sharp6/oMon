@@ -25,4 +25,9 @@ def renderClock():
 
 @app.route('/api/getImgBasedOnTime/<date>/<time>')
 def getImgBasedOnTime(date=None,time=None):
+   if((time/60)>1):
+      print Tomorrow!
+   hours = math.floor(time / 60) % 24
+   minutes = round(time%60)
+   print "hours: " + hours + " minutes: " + minutes
    return jsonify(data='all is well at '+date + " at " +time)
