@@ -35,7 +35,7 @@ def getImgBasedOnTime(date=None,time=None):
 
    timeString = int(str(hours) + str(minutes))
 
-   files = os.listDir(os.path.join('./app/static/img',date))
+   files = os.listdir(os.path.join('./app/static/img',date))
 
    
    firstFile = next(files)
