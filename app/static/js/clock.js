@@ -34,11 +34,16 @@ $(document).ready(function() {
 	    self.sliderPosition = ko.observable(1);
 	    self.closestImg = ko.observable("");
 	    self.clockPosition = ko.computed(function() {
-	    	var thisClockPosition = Math.round((self.sliderPosition() * 780 / 100)+(18*60));
-	    	$.getJSON('/api/getImgBasedOnTime/' + self.selectedDate() + "/" + thisClockPosition, {}, function(data) {
-	    		self.closestImg(data.data);
-	    	});
-	    	return thisClockPosition;
+	    	if(self.sliderPosition() && self.selectedDate()) {
+	    	  var thisClockPosition = Math.round((self.sliderPosition() * 780 / 100)+(18*60));
+		    	$.getJSON('/api/getImgBasedOnTime/' + self.selectedDate() + "/" + thisClockPosition, {}, function(data) {
+		    		self.closestImg(data.data);
+		    	});
+		    	return thisClockPosition;	
+	    	} else {
+	    		return "";
+	    	}
+	    	
 	    }).extend({rateLimit: 50});
 
 	    self.clockHours = ko.computed(function() {
