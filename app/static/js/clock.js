@@ -30,6 +30,7 @@ $(document).ready(function() {
 		  //range of hours is 6PM - 7AM = 13hours = 13*60 = 780 minutes
 
 	    var self = this;
+	    self.selectedDate = ko.observable("");
 	    self.sliderPosition = ko.observable(1);
 	    self.closestImg = ko.observable("");
 	    self.clockPosition = ko.computed(function() {

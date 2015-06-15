@@ -20,9 +20,13 @@ This is the clock.
 
 
 List of dirs is:
+<select data-bind="value: selectedDate">
 {% for dir in dirList %}
- {{ dir }}
+ <option value="{{ dir }}">{{dir}}</option>
 {% endfor %}
+</select>
+<br/>
+Selected date is: <span data-bind="text: selectedDate"></span><br/>
 
 Slider value is: <span data-bind="text: sliderPosition"></span><br>
 Clock value is: <span data-bind="text: clockPosition"></span><br>
