@@ -2,13 +2,10 @@ body {
 	margin: 0;
 }
 
-
-
 img.latestImg {
 	width: 100%;
 	max-width: 1000px;
 }
-
 
 #containerDiv {
 	position: relative;
@@ -17,7 +14,6 @@ img.latestImg {
 }
 
 #imgContainer {
-	position: absolute;
 	background: #00ff00;
 }
 
