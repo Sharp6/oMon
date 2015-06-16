@@ -13,26 +13,17 @@
 {% endblock %}
 
 {% block content %}
-This is the clock.
 
-<input data-bind="value: sliderPosition, valueUpdate: 'afterkeydown'" />
-<div style="margin: 10px" data-bind="slider: sliderPosition, sliderOptions: {min: 0, max: 100, range: 'min', step: 1}"></div>
-
-
-List of dirs is:
-<select data-bind="value: selectedDate">
-{% for dir in dirList %}
- <option value="{{ dir }}">{{dir}}</option>
-{% endfor %}
-</select>
-<br/>
-Selected date is: <span data-bind="text: selectedDate"></span><br/>
-
-Slider value is: <span data-bind="text: sliderPosition"></span><br>
-Clock value is: <span data-bind="text: clockPosition"></span><br>
-Hour value is: <span data-bind="text: clockHours"></span><br>
-Minutes value is: <span data-bind="text: clockMinutes"></span><br/>
-Closest img is: <span data-bind="text: closestImg"></span></br>
+<p>
+	Select a date:
+	<select data-bind="value: selectedDate">
+		{% for dir in dirList %}
+			<option value="{{ dir }}">{{dir}}</option>
+		{% endfor %}
+	</select>
+	<br/>
+	<div style="margin: 10px" data-bind="slider: sliderPosition, sliderOptions: {min: 0, max: 100, range: 'min', step: 1}"></div>
+</p>
 
 
 <div id="containerDiv">
@@ -49,5 +40,9 @@ Closest img is: <span data-bind="text: closestImg"></span></br>
 	<div id="imgContainer">
 		<img data-bind="attr:{'src': closestImg}" class="olImage" />
 	</div>
+</div>
+
+<div class="debugInfo">
+	I retrieved the image <span data-bind="text: closestImg"></span> for clock time <span data-bind="text: clockHours"></span>:<span data-bind="text: clockMinutes"></span>.
 </div>
 {% endblock %} 

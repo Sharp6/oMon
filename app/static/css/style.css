@@ -28,8 +28,5 @@ img.olImage {
 #clockContainer { 
   position: absolute;
   width: 20%;
-  padding-bottom: 100%;
-  vertical-align: middle;
-  overflow: hidden;
-  background: midnightblue;
+  z-index: 100;
 } 
