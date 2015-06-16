@@ -2,11 +2,28 @@ body {
 	margin: 0;
 }
 
-img.olImage {
-	
-}
-
 img.latestImg {
 	width: 100%;
 	max-width: 1000px;
 }
+
+#containerDiv {
+	position: relative;
+	width: 100%;
+	background: #ff0000;
+}
+
+#imgContainer {
+	position: absolute;
+	background: #00ff00;
+}
+
+img.olImage {
+	width: 100%;
+}
+
+#clockContainer { 
+  position: absolute;
+  width: 20%;
+  background: midnightblue;
+} 

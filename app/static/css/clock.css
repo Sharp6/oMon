@@ -1,12 +1,3 @@
-#clock-container { 
-  display: inline-block;
-  position: relative;
-  width: 20%;
-  padding-bottom: 100%;
-  vertical-align: middle;
-  overflow: hidden;
-  background: midnightblue;
-} 
 #face { stroke-width: 2px; stroke: #fff; }
 #hour, #min { 
   stroke-width: 1px;
