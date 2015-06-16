@@ -2,10 +2,13 @@ body {
 	margin: 0;
 }
 
+
+
 img.latestImg {
 	width: 100%;
 	max-width: 1000px;
 }
+
 
 #containerDiv {
 	position: relative;
@@ -19,11 +22,14 @@ img.latestImg {
 }
 
 img.olImage {
-	width: 100%;
+	width:100%;
 }
 
 #clockContainer { 
   position: absolute;
   width: 20%;
+  padding-bottom: 100%;
+  vertical-align: middle;
+  overflow: hidden;
   background: midnightblue;
 } 
